@@ -1,0 +1,45 @@
+<h2><span style="color: #b33605;">Step 6: Add Geolocator and Google Maps</span></h2>
+To pin your location on the map, we need to add two gems: one to calculate your position, one to display it on the map.
+Let's start with implementing the geolocation to the attendee profile.
+
+Open Gemfile in the project and add
+<pre class="brush:ruby">gem 'geocoder'</pre>
+<code></code>and
+<pre class="brush:ruby">gem 'gmaps4rails'</pre>
+<code></code>under the line
+<pre class="brush:ruby">gem 'carrierwave'</pre>
+In the <strong>Terminal/Command Prompt</strong> run:
+<code></code>
+<pre class="brush:shell">bundle</pre>
+<code></code>and then:
+<code></code>
+<pre class="brush:shell">rails generate migration AddLatitudeAndLongitudeToAttendee latitude:float longitude:float
+rake db:migrate</pre>
+Open <strong>app/models/attendee.rb</strong> and add
+<code></code>
+<pre class="brush:ruby">geocoded_by :address
+after_validation :geocode</pre>
+<code></code>after
+<pre class="brush:ruby">mount_uploader :picture, PictureUploader</pre>
+It's not finished yet, you still need to add the map to pin your location.
+In the Terminal/Command Prompt run
+<pre class="brush:shell">rails generate gmaps4rails:install</pre>
+Go back to <strong>app/models/attendee.rb</strong> and add
+<pre class="brush:ruby">acts_as_gmappable :process_geocoding =&gt; false</pre>
+<code></code>after
+<pre class="brush:ruby">after_validation :geocode</pre>
+<code></code><strong>Open app/controllers/attendees_controller.rb</strong> and add
+<pre class="brush:ruby">@pins = @attendees.to_gmaps4rails</pre>
+<code></code>in the index method, after
+<pre class="brush:ruby">@attendees = Attendee.all</pre>
+<code></code>One more step and you can see the map on the app.
+
+Open <strong>app/views/attendees/index.html.erb</strong> and add
+<pre class="brush:xml">&lt;br/&gt; 
+&lt;%= gmaps4rails(@pins) %&gt; 
+&lt;%= yield :scripts %&gt;</pre>
+after the table.
+
+Now you need to restart the Rails server process in Terminal/Command Prompt.
+To pin the attendees you've already added, you need to update their profiles.
+<h2 style="text-align: center;"><strong><a href="/apptutorial/rails-girls-app-tutorial-step-6/rails-girls-app-tutorial-step-5/"> &lt; Step 5</a><span style="color: #d33605;">                              </span></strong><a style="text-align: right;" href="/apptutorial/rails-girls-app-tutorial-step-6/rails-girls-app-tutorial-next-steps/"><strong><span style="color: #d33605;">Next Steps &gt;</span></strong></a></h2>
