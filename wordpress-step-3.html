@@ -8,7 +8,7 @@ Design doesn’t look nice. Let’s do something about it. We’ll use<strong> T
 Open <strong>app/views/layouts/application.html.erb</strong> and add on top of
 <pre class="brush:css">&lt;%= stylesheet_link_tag "application" %&gt;</pre>
 the line
-<pre class="brush:css">&lt;link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css"&gt;</pre>
+<pre class="brush:css">&lt;%= stylesheet_link_tag "http://railsgirls.com/assets/bootstrap.css" %&gt;</pre>
 and swap
 <pre class="brush:css">&lt;%= yield %&gt;</pre>
 for
