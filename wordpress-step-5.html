@@ -1,0 +1,13 @@
+<h2><span style="color: #b33605;">Step 5: Finetune the routes</span></h2>
+If you try to open<strong><span style="color: #b33605;"> <a title="Localhost" href="http://localhost:3000" target="_blank"><span style="color: #b33605;"><strong>http://localhost:3000</strong></span></a></span> </strong>it still shows the default page. Let’s make it redirect to the attendees page. 
+On <strong>OS X and Linux</strong>, in the Terminal run:
+<pre class="brush:shell">rm public/index.html</pre>
+In <strong>Windows</strong>, in the Command Prompt run:
+<pre class="brush:shell">del public\index.html</pre>
+Then open config/routes.rb and add the following after the first line:
+<pre class="brush:ruby">root :to =&gt; redirect("/attendees")</pre>
+<span style="color: #b33605;"><strong>Coach: Talk about routes.</strong></span>
+
+<h2 style="text-align: center;"><strong><a href="/apptutorial/rails-girls-app-tutorial-step-5/rails-girls-app-tutorial-step-4/"> &lt; Step 4</a><span style="color: #d33605;">                              
+</span></strong><a style="text-align: right;" href="/apptutorial/rails-girls-app-tutorial-step-5/rails-girls-app-tutorial-step-6/"><strong><span style="color: #d33605;">Step 6 &gt;</span>
+</strong></a></h2>
