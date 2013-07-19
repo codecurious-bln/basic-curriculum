@@ -1,0 +1,19 @@
+<h2><span style="color: #b33605;">Step 1: Creating the application</span></h2>
+We are going to create app called railsgirls.
+
+<strong>First, let’s open Terminal/Command Prompt:</strong>
+<strong>OS X:</strong> Open Spotlight, type Terminal and click appearing Terminal options.
+<strong>Windows:</strong> Click Start-menu and search for Command Prompt click Command Prompt with Ruby on Rails.
+
+Next, type these commands:
+<pre class="brush:shell">mkdir projects 
+cd projects
+rails new railsgirls 
+cd railsgirls 
+rails s</pre>
+Open <span style="color: #b33605;"><a title="localhost" href="http://localhost:3000" target="_blank"><span style="color: #b33605;"><strong>http://localhost:3000</strong></span></a></span> in browser.
+<strong>CTRL-C</strong> to exit the server in Terminal/Command Prompt.
+
+<span style="color: #b33605;"><strong>Coach: Quick explanation about what each command does. What was generated? What does the server do.</strong></span>
+<h2 style="text-align: center;"><strong><a href="/apptutorial/rails-girls-app-tutorial-step-1/rails-girls-app-tutorial-step-0/"> &lt; Step 0</a><span style="color: #d33605;">                              
+</span></strong><a style="text-align: right;" href="./rails-girls-app-tutorial-step-2/"><strong><span style="color: #d33605;">Step 2 &gt;</span></strong></a></h2>
