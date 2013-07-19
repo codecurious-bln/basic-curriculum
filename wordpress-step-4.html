@@ -1,0 +1,39 @@
+<h2 class="brush:css"><span style="color: #b33605;">Step 4: Adding picture uploads</span></h2>
+We need to install additional library to add image processing. Open <strong>Gemfile</strong> in the project and add
+<pre class="brush:ruby">gem 'carrierwave'</pre>
+under the line
+<pre class="brush:ruby">gem 'sqlite3'</pre>
+<code></code>
+<span style="color: #b33605;"> <strong>Coach: Tell what libraries are and why they are used. Maybe few words about Open Source?</strong></span>
+
+Now we generate the needed code for picture handling.
+
+In the Terminal/Command Prompt run:
+<pre class="brush:shell">bundle</pre>
+At this point you need to restart the Rails server process in Terminal/Command Prompt. This is needed for the app to load the added gem.
+
+Then you can start adding the picture upload by running a command:
+<pre class="brush:shell">rails generate uploader Picture</pre>
+Open <strong>app/models/attendee.rb </strong>and add
+<pre class="brush:ruby">mount_uploader :picture, PictureUploader</pre>
+under the line
+<pre class="brush:ruby">class Attendee &lt; ActiveRecord::Base</pre>
+Open <strong>app/views/attendees/_form.html.erb</strong> and change
+<pre class="brush:xml">&lt;%= f.text_field :picture %&gt;</pre>
+to
+<pre class="brush:css">&lt;%= f.file_field :picture %&gt;</pre>
+and
+<pre class="brush:xml">&lt;%= form_for(@attendee) do |f| %&gt;</pre>
+to
+<pre class="brush:xml">&lt;%= form_for(@attendee, :html =&gt; {:multipart =&gt; true}) do |f| %&gt;</pre>
+The view doesn’t look nice, it only shows a path to the file, so let’s fix it. 
+Open <strong>app/views/attendees/show.html.erb</strong> and change
+<pre class="brush:xml">&lt;%= @attendee.picture %&gt;</pre>
+to
+<pre class="brush:xml">&lt;%= image_tag(@attendee.picture_url, :width =&gt; 600) if @attendee.picture.present? %&gt;</pre>
+<span style="color: #b33605;"><strong>Coach: Talk a little about HTML.</strong></span>
+
+
+<h2 style="text-align: center;"><strong><a href="/apptutorial/rails-girls-app-tutorial-step-4/rails-girls-app-tutorial-step-3/"> &lt; Step 3</a><span style="color: #d33605;">                              
+</span></strong><a style="text-align: right;" href="/apptutorial/rails-girls-app-tutorial-step-4/rails-girls-app-tutorial-step-5/"><strong><span style="color: #d33605;">Step 5 &gt;</span></strong></a>
+</h2>
