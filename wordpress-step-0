@@ -1,0 +1,10 @@
+<h2><span style="color: #d33605;">Step 0: Get to know the tools</span></h2>
+Installation instructions can be found <a title="Installation Guide" href="http://guides.railsgirls.com/install/" target="_blank">here</a>
+
+<strong>Texteditor:</strong> (Gedit, Vim, Emacs, Komodo Edit, Sublime Text, Textmate) are examples of texteditors your can use for writing code and editing files.
+<strong>Terminal / Command Prompt</strong> is where you start the rails server and run commands.
+<strong>Web browser</strong> (Firefox, Safari, Chrome) are for viewing your application.
+<h2 style="text-align: center;"><strong><a href="./rails-girls-app-tutorial-step-1/"> Step 1 &gt;</a></strong></h2>
+
+
+
