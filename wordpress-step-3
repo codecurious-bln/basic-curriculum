@@ -1,0 +1,45 @@
+<h2><span style="color: #b33605;">Step 3: Design</span></h2>
+<span style="color: #b33605;"><strong>Coach: Talk about the relationship of HTML and Rails; 
+what part of views is HTML and what is Embedded Ruby (ERB)? 
+How does this relate to MVC (models and controllers control the logic of dynamically generating HTML, or views)? Explain how the app folders are ordered/classified.</strong></span>
+
+Design doesn’t look nice. Let’s do something about it. We’ll use<strong> Twitter’s Bootstrap</strong> project to give us nicer default styles really easily.
+
+Open <strong>app/views/layouts/application.html.erb</strong> and add on top of
+<pre class="brush:css">&lt;%= stylesheet_link_tag "application" %&gt;</pre>
+the line
+<pre class="brush:css">&lt;link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css"&gt;</pre>
+and swap
+<pre class="brush:css">&lt;%= yield %&gt;</pre>
+for
+<pre class="brush:xml">&lt;div class="container"&gt;&lt;%= yield %&gt;&lt;/div&gt;</pre>
+Let’s also add topbar and footer to the layout and style those and the attendees table.   To the <strong>application.html.erb</strong> under <strong>&lt;body&gt;</strong> add:
+<pre class="brush:xml">&lt;div class="navbar navbar-fixed-top"&gt;
+    &lt;div class="navbar-inner"&gt;
+        &lt;div class="container"&gt;&lt;a class="brand" href="/"&gt;The workshop app&lt;/a&gt;&lt;ul class="nav"&gt;
+              &lt;li class="active"&gt;&lt;a href="/attendees"&gt;attendees&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+and before <strong>&lt;/body&gt;</strong> add:
+<pre class="brush:xml">&lt;footer&gt;
+    &lt;div class="container"&gt;Rails Girls 2012&lt;/div&gt;
+&lt;/footer&gt;</pre>
+Open <strong>app/assets/stylesheets/application.css</strong> and add to the bottom:
+<pre class="brush:css">#logo { 
+    font-size: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    float: left;
+    padding: 10px;
+}
+body { padding-top: 100px; }
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle !important; border: none !important; }
+th { border-bottom: 1px solid #DDD !important; }
+td.picture { width: 140px; }
+td.picture img { width: 140px; }</pre>
+<strong style="color: #b33605;">Coach: Talk a little about CSS and layouts.</strong>
+
+<h2 style="text-align: center;"><strong><a href="/apptutorial/rails-girls-app-tutorial-step-3/rails-girls-app-tutorial-step-2/"> &lt; Step 2</a><span style="color: #d33605;">                              
+</span></strong><a style="text-align: right;" href="/apptutorial/rails-girls-app-tutorial-step-3/rails-girls-app-tutorial-step-4/"><strong><span style="color: #d33605;">Step 4 &gt;</span></strong></a></h2>
