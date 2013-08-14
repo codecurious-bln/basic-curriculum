@@ -32,7 +32,20 @@ Go back to <strong>app/models/attendee.rb</strong> and add
 <pre class="brush:ruby">@pins = @attendees.to_gmaps4rails</pre>
 <code></code>in the index method, after
 <pre class="brush:ruby">@attendees = Attendee.all</pre>
-<code></code>One more step and you can see the map on the app.
+<code></code>Two more step and you can see the map on the app.
+
+Open <strong>app/views/layouts/application_layout.html.erb</strong> and add
+<pre class="brush:xml">
+&lt;%= stylesheet_link_tag 'gmaps4rails' %&gt;
+</pre>
+on a new line, somewhere between
+<pre class="brush:xml">
+&lt;head&gt;
+</pre>
+and
+<pre class="brush:xml">
+&lt;/head&gt;
+</pre>
 
 Open <strong>app/views/attendees/index.html.erb</strong> and add
 <pre class="brush:xml">&lt;br/&gt; 
