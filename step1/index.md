@@ -22,4 +22,4 @@ Open http://localhost:3000 in browser.
 
 ###Coach: Quick explanation about what each command does. What was generated? What does the server do.
 
-Step 2
+[ Step 2 &gt;](/step2)
