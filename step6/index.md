@@ -5,7 +5,9 @@ layout: default
 
 ## Step 6: Add Geolocator and Google Maps
 
-To pin your location on the map, we need to add two gems: one to calculate your position, one to display it on the map. Let's start with implementing the geolocation to the attendee profile.
+To pin your location on the map, we need to add two gems: one to calculate your position, one to display it on the map. 
+
+Let's start with implementing the geolocation to the attendee profile.
 
 Open Gemfile in the project and add
 
@@ -77,4 +79,5 @@ Open app/views/attendees/index.html.erb and add
     <%= yield :scripts %>
 
 after the table.
+
 Now you need to restart the Rails server process in Terminal/Command Prompt. To pin the attendees you've already added, you need to update their profiles.
