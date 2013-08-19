@@ -7,7 +7,10 @@
   font-size: 44px;
   font-weight: bold;
   line-height: 2.3em;
-  margin: 5px;
+}
+
+#header-img{
+  margin: 30px;
 }
 
 #sidebar{
