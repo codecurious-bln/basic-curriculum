@@ -17,7 +17,7 @@ Next, type these commands:
     cd railsgirls 
     rails s
 
-Open http://localhost:3000 in browser.
+Open [http://localhost:3000/attendees](http://localhost:3000/attendees "localhost") in browser.
 **CTRL-C** to exit the server in Terminal/Command Prompt.
 
 ###Coach: Quick explanation about what each command does. What was generated? What does the server do.
