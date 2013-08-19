@@ -2,13 +2,17 @@
   background-color: #d3360b;
 }
 
+#header-text{
+  color: white;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 2.3em;
+  margin: 5px;
+}
+
 #sidebar{
   margin-top:20px;
   margin-left:10px;
-}
-
-p{
-  font-size: 18px;
 }
 
 .coach{
