@@ -6,17 +6,17 @@ layout: default
 ## Step 4: Adding picture uploads
 We need to install additional library to add image processing. Open `Gemfile` in the project and add
 
-  gem 'carrierwave'
+    gem 'carrierwave'
 
 under the line
 
-  gem 'sqlite3'
+    gem 'sqlite3'
 
 <p class="lead coach">Coach: Tell what libraries are and why they are used. Maybe few words about Open Source?</p>
 
 Now we generate the needed code for picture handling.
 
-In the Terminal/Command Prompt run:
+In the **Terminal/Command Prompt** run:
 
     bundle
 
