@@ -3,7 +3,7 @@ title: Step 1
 layout: default
 ---
 
-# Step 1: Creating the application
+## Step 1: Creating the application
 We are going to create app called railsgirls.
 First, let’s open Terminal/Command Prompt:
 * OS X: Open Spotlight, type Terminal and click appearing Terminal options.
