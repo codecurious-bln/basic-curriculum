@@ -10,19 +10,19 @@ Design doesn’t look nice. Let’s do something about it. We’ll use __Twitter
 
 Open `app/views/layouts/application.html.erb` and add on top of
 
-`<%= stylesheet_link_tag "application" %>`
+    <%= stylesheet_link_tag "application" %>
 
 the line
 
-`<%= stylesheet_link_tag "http://railsgirls.com/assets/bootstrap.css" %>`
+    <%= stylesheet_link_tag "http://railsgirls.com/assets/bootstrap.css" %>
 
 and swap
 
-`<%= yield %>`
+    <%= yield %>
 
 for
 
-`<div class="container"><%= yield %></div>`
+    <div class="container"><%= yield %></div>
 
 Let’s also add topbar and footer to the layout and style those and the attendees table. To the `application.html.erb` under `<body>` add:
 
@@ -56,4 +56,5 @@ Open `app/assets/stylesheets/application.css` and add to the bottom:
     th { border-bottom: 1px solid #DDD !important; }
     td.picture { width: 140px; }
     td.picture img { width: 140px; }
+
 <p class="lead coach">Coach: Talk a little about CSS and layouts.</p>
