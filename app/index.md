@@ -197,4 +197,24 @@ Now refresh your browser to see what changed.
 
 <span class="lead coach">Coach: Talk a little about HTML.</span>
 
+# 5. Finetune the routes
+
+If you try to open `http://localhost:3000` it still shows the “Welcome aboard” page. Let’s make it redirect to the ideas page.
+
+Open config/routes.rb and after the first line add
+
+    root :to => redirect('/ideas')
+
+Delete the file `index.html` from the` public/` folder.
+
+Test the change by opening the root path (that is, http://localhost:3000/) in your browser.
+
+Coach: Talk about routes, and include details on the order of routes and their relation to static files.
+
+# What next?
+
+- Add design using HTML & CSS
+- Add ratings
+- Use CoffeeScript (or JavaScript) to add interaction
+- Add picture resizing to make loading the pictures faster
 
