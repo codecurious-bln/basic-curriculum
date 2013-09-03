@@ -5,17 +5,23 @@ layout: default
 
 # Get to know the tools
 
-Text Editor
+<i class="icon-file-text icon-2x"> Text Editor</i>
+
 
 > Sublime Text, Komodo Edit, Vim, Emacs, and Gedit are examples of text editors your can use for writing code and editing files.
 
-Terminal (known as Command Prompt on Windows)
+
+<i class="icon-terminal icon-2x"> Terminal (known as Command Prompt on Windows)</i>
+
 
 > Where you start the rails server and run commands.
 
-Web browser
+
+<i class="icon-desktop icon-2x"> Web browser</i>
+
 
 > (Firefox, Safari, Chrome) for viewing your application.
+
 
 ## Important
 
