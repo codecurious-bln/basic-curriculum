@@ -7,21 +7,15 @@ layout: default
 
 <i class="icon-file-text icon-2x"> Text Editor</i>
 
-
-> Sublime Text, Komodo Edit, Vim, Emacs, and Gedit are examples of text editors your can use for writing code and editing files.
-
+<p class="lead">Sublime Text, Komodo Edit, Vim, Emacs, and Gedit are examples of text editors your can use for writing code and editing files.</p>
 
 <i class="icon-terminal icon-2x"> Terminal (known as Command Prompt on Windows)</i>
 
-
-> Where you start the rails server and run commands.
-
+<p class="lead">Where you start the rails server and run commands.</p>
 
 <i class="icon-desktop icon-2x"> Web browser</i>
 
-
-> (Firefox, Safari, Chrome) for viewing your application.
-
+<p class="lead">(Firefox, Safari, Chrome) for viewing your application.</p>
 
 ## Important
 
@@ -41,7 +35,6 @@ First, let’s open a terminal:
 Next, type these commands in the terminal:
 
     mkdir projects
-
 
 You can verify that a directory named projects was created by running the list command: `ls`. You should see the projects directory in the output. Now you want to change the directory you are currently in to the projects folder by running:
 
