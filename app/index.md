@@ -64,13 +64,13 @@ When the command prompt is not visible you cannot execute new commands. If you t
 
 Hit `CTRL-C` in the terminal to quit the server.
 
-<span class="lead coach">Coach: Explain what each command does. What was generated? What does the server do?</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Explain what each command does. What was generated? What does the server do?</span>
 
 # 2. Create Idea scaffold
 
 We’re going to use Rails’ scaffold functionality to generate a starting point that allows us to list, add, remove, edit, and view things; in our case ideas.
 
-<span class="lead coach">Coach: What is Rails scaffolding? (Explain the command, the model name and related database table, naming conventions, attributes and types, etc.) What are migrations and why do you need them?</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: What is Rails scaffolding? (Explain the command, the model name and related database table, naming conventions, attributes and types, etc.) What are migrations and why do you need them?</span>
 
     rails generate scaffold idea name:string description:text picture:string
     rake db:migrate
@@ -82,7 +82,7 @@ Hit `CTRL-C` to quit the server again when you’ve clicked around a little.
 
 # 3. Design
 
-<span class="leach coach">Coach: Talk about the relationship between HTML and Rails.
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about the relationship between HTML and Rails.
 What part of views is HTML and what is Embedded Ruby (ERB)? What is MVC and how does this relate to it? 
 (Models and controllers are responsible for generating the HTML views.)</span>
 
@@ -136,7 +136,7 @@ Now let’s also change the styling of the ideas table. Open `app/assets/stylesh
 
 Now make sure you saved your files and refresh the browser to see what was changed. You can also change the HTML & CSS further.
 
-<span class="lead coach">Coach: Talk a little about CSS and layouts.</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about CSS and layouts.</span>
 
 # 4. Adding picture uploads
 
@@ -150,7 +150,7 @@ add
 
     gem 'carrierwave'
 
-<span class="lead coach">Coach: Explain what libraries are and why they are useful. Describe what open source software is.</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Explain what libraries are and why they are useful. Describe what open source software is.</span>
 
 In the terminal run:
 
@@ -194,7 +194,7 @@ to
 
 Now refresh your browser to see what changed.
 
-<span class="lead coach">Coach: Talk a little about HTML.</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about HTML.</span>
 
 # 5. Finetune the routes
 
@@ -204,15 +204,16 @@ Open config/routes.rb and after the first line add
 
     root :to => redirect('/ideas')
 
-Delete the file `index.html` from the` public/` folder.
+Delete the file `index.html` from the `public/` folder.
 
 Test the change by opening the root path (that is, http://localhost:3000/) in your browser.
 
-Coach: Talk about routes, and include details on the order of routes and their relation to static files.
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about routes, 
+and include details on the order of routes and their relation to static files.</span>
 
 # What next?
 
-- Add design using HTML & CSS
+- Add design using HTML &amp; CSS
 - Add ratings
 - Use CoffeeScript (or JavaScript) to add interaction
 - Add picture resizing to make loading the pictures faster
