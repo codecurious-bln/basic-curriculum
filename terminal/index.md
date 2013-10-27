@@ -46,6 +46,8 @@ To get one level up again run
 
 A short-cut to your home directory is the tilde: `~`
 
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: You can talk about auot-completion with the tab command</span>
+
 Now navigate to the place in your folders where you want to store all Rails Girls tutorial materials and exercises. To create a directory named "railsgirls" for example run:
 
     mkdir railsgirls
@@ -84,7 +86,9 @@ Now let's open a ruby terminal
     irb
 
 As you notice the command prompt is gone and we have entered another program on our terminal called the ruby terminal.
-Ther ruby terminal is an environment that understands and executes ruby code. You can try out all commands you did during this tutorial: `http://tryruby.org` which is a browser based ruby environment
+Ther ruby terminal is an environment that understands and executes ruby code. You can try out all commands you did during this tutorial: `http://tryruby.org` which is a browser based ruby environment.
+
+You can quite `irb` anytime by typing `exit`.
 
 ## Strings and Integers
     
@@ -160,8 +164,39 @@ Let's just print out our array
 Look at the size of it:
     planets.size
 
-Look at the size of it:
-    planets.size
+You can also print the first one:
+    planets.first
+is the same as
+    planets.[0]
+You should know that an array starts counting with 0. So the last one would be `planets.[3]`
+
+##Iteration
+Iteration means looping through an array and doing something with each item. Looping means you repeat the same action over and over until an halt. In our example we will perform the same action on the first item in the array to the last one. The placeholder for those items is stored in the pipes | |.
+
+Now we are just saying `puts` to each of the items:
+    planets.each do 
+      |x| puts + x 
+    end
+
+Now we add `upcase` :
+    planets.each do 
+      |x| puts + x.upcase 
+    end
+
+Now we add an `"Hello "` to it:
+
+    planets.each do 
+      |x| puts "Hello " + x 
+    end
+
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: If students get stuck probably best to exit irb and start over again.</span>
+
+#Saving code in files
+As you noticed, anytime you quit `irb` and go back in again, nothing was saved and you have to start all over again. In the long run you will want to save code in files.
+
+So let's create a file for saving ruby code:
+    touch blabla.rb
+
 
 Let's open that file in your editor. Open your editor and in the menubar use File>>Open to open the file.
 Save this text there:
@@ -172,12 +207,10 @@ Save this text there:
     print a
 
 You can now run this file in the terminal:
-
-    ruby hello.txt
-
-If you enjoyed running .rb files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal)
-`http://pine.fm/LearnToProgram/?Chapter=01`
-up to half of chapter 5 (the line width stuff is pretty boring, all until then is fine)
+    ruby blabla.txt
 
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about CSS and layouts.</span>
+If you enjoyed running .rb files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal) [Chris Pine LearnToProgram](http://pine.fm/LearnToProgram/?Chapter=01) tutorial, you can skip any parts that are not that interesting to you, e.g. line-widths in a poem or how old you are in seconds.
+
+
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: placeholder </span>
