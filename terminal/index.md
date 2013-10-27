@@ -20,20 +20,15 @@ layout: default
 
 <p class="lead">(Firefox, Safari, Chrome) for viewing your application.</p>
 
-## Important
-
-......
 
 # 1. Get to know the terminal
 
 We’re going to familiarize ourselves with moving around our folders without using the graphical interface
 
-When you start the terminal the bash program starts off automatically and leaves you with the command prompt, which looks like this:
-
-    $
+When you start the terminal the `bash` program starts off automatically and leaves you with the `command prompt`, which looks like this:  `$`.
 
 When the command prompt is not visible you cannot execute new commands.
-First, let’s open a terminal and type into the command prompt a command that prints your current working directory
+Let's start with a command that prints your current working directory
 
     pwd
 
@@ -41,7 +36,7 @@ With ls you can get a list of all the content in that directory:
 
     ls
 
-To get into one directory run cd followed by the name of a directory:
+To get into one directory run cd followed by the name of that directory:
 
     cd documents
 
@@ -49,11 +44,9 @@ To get one level up again run
 
     cd ..
 
-A short-cut to your home directory is the tilde:
+A short-cut to your home directory is the tilde: `~`
 
-    ~
-
-Now navigate to the place in your folders where you want to store all RailsGirls tutorials. To create a directory named railsgirls run:
+Now navigate to the place in your folders where you want to store all Rails Girls tutorial materials and exercises. To create a directory named "railsgirls" for example run:
 
     mkdir railsgirls
 
@@ -91,22 +84,27 @@ Now let's open a ruby terminal
     irb
 
 As you notice the command prompt is gone and we have entered another program on our terminal called the ruby terminal.
-Ther ruby terminal is an environment that understands and executes ruby code. You can try out all commands you did during this tutorial: 'http://tryruby.org' which is a browser based ruby environment
+Ther ruby terminal is an environment that understands and executes ruby code. You can try out all commands you did during this tutorial: `http://tryruby.org` which is a browser based ruby environment
 
+## Strings and Integers
     
-For example:
+For example you could write this and hit Enter:
 
     "Hello World"
+Any word literals that are not numbers or code need to be written in quotation marks ("" or '') so ruby terminal knows what it is.
 
 And as we know Ruby knows math too:
 
     1 + 5
+Ruby knows integers, no need to mark them specifically.
+
+## Variables
 
 Let's store something in a variable:
 
     planet = "earth"
 
-Variable names are always written in lower caps. In our example we are storing a string into a variable. A string is not-coding text literal written in quotation marks (can be singel or double quote).
+Variable names are always written in lower caps. .
 
 Let's output the variable
 
@@ -121,13 +119,49 @@ Just like any number or math:
 
     55555
 
-Let's overwrite our variable with another value:
+Overwrite our variable with another value:
 
     planet = "mars"
 
-Let's output the variable again to see the different return value:
+Greet the planet using a string and a variable:
 
-    planet
+    puts "Hello" + planet
+
+Add an empty space:
+
+    puts "Hello " + planet
+
+Add an exclamation mark:
+
+    puts "Hello " + planet + "!"
+
+Capitalize the planet:
+
+    puts "Hello " + planet.upcase + "!"
+
+##Arrays
+
+An array is way how one can store a list or a collection in a certain format. Let's create a list of planets stored in an array. You can imagine it like a bookshelf.
+
+Creating an empty array:
+    planets = []
+
+Now we add our variable to that array
+    planets.push planet
+
+Let's add some more planets directly (hit enter after each line)
+    planets.push "earth"
+    planets.push "saturn"
+    planets.push "jupiter"
+
+Let's just print out our array
+    planets 
+
+Look at the size of it:
+    planets.size
+
+Look at the size of it:
+    planets.size
 
 Let's open that file in your editor. Open your editor and in the menubar use File>>Open to open the file.
 Save this text there:
@@ -142,7 +176,8 @@ You can now run this file in the terminal:
     ruby hello.txt
 
 If you enjoyed running .rb files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal)
-http://pine.fm/LearnToProgram/?Chapter=01
+`http://pine.fm/LearnToProgram/?Chapter=01`
 up to half of chapter 5 (the line width stuff is pretty boring, all until then is fine)
 
 
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about CSS and layouts.</span>
