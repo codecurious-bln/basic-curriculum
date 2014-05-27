@@ -23,7 +23,7 @@ We are using Rails' scaffolds to generate a starting point that allows us to lis
     rake db:migrate
     rails s
     
-Open `http://localhost:3000/ideas` in your browser. Click around and test what you got by running these few command-line commands.
+Open `http://localhost:3000/attendees` in your browser. Click around and test what you got by running these few command-line commands.
 
 Hit **`CTRL-C`** to quit the server again when you’ve clicked around a little.
 
@@ -75,7 +75,7 @@ and before `</body>` add
       </div>
     </footer>
 
-Now let’s also change the styling of the ideas table. Open `app/assets/stylesheets/application.css` and at the bottom add
+Now let’s also change the styling. Open `app/assets/stylesheets/application.css` and at the bottom add
 
     body { padding-top: 100px; }
     footer { margin-top: 100px; }
@@ -86,5 +86,63 @@ Now let’s also change the styling of the ideas table. Open `app/assets/stylesh
 Now make sure you saved your files and refresh the browser to see what was changed. You can also change the HTML & CSS further.
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about CSS and layouts.</span>
+
+# 4. Adding picture uploads
+
+We need to install a piece of software to let us upload files in Rails.
+
+Open `Gemfile` in the project directory using your text editor and under the line
+
+    gem 'sqlite3'
+
+add
+
+    gem 'carrierwave'
+
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Explain what libraries are and why they are useful. Describe what open source software is.</span>
+
+In the terminal run:
+
+    bundle
+
+Now we can generate the code for handling uploads. In the terminal run:
+
+    rails generate uploader Picture
+
+At this point you need to restart the Rails server process in the terminal, as it only picks up new libraries/gems after restart.
+
+Hit **CTRL-C** in the terminal to quit the server. Once it has stopped, you can press the up arrow to get to the last command entered, then hit enter to start the server again.
+
+This is needed for the app to load the added library.
+
+Open `app/models/attendee.rb` and under the line
+
+    class Attendee < ActiveRecord::Base
+
+add
+
+    mount_uploader :picture, PictureUploader
+
+Open `app/views/attendees/_form.html.erb` and change
+
+    <%= f.text_field :picture %>
+
+to
+
+    <%= f.file_field :picture %>
+
+In your browser, add a new attendee with a picture. When you upload a picture it doesn’t look nice because it only shows a path to the file, so let’s fix that.
+
+Open `app/views/attendees/show.html.erb` and change
+
+    <%= @attendee.picture %>
+
+to
+
+    <%= image_tag(@attendee.picture_url, :width => 600) if @attendee.picture.present? %>
+
+Now refresh your browser to see what changed.
+
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about HTML.</span>
 
 
