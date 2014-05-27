@@ -1,2 +1,3 @@
 #baseurl: http://RailsGirlsBerlin.github.io/basic-curriculum
 baseurl: http://pragtob.github.io/basic-curriculum
+markdown: kramdown
