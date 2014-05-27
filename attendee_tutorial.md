@@ -147,11 +147,11 @@ Now refresh your browser to see what changed.
 
 # 5. Finetune the routes
 
-If you try to open `http://localhost:3000` it still shows the “Welcome aboard” page. Let’s make it redirect to the ideas page.
+If you try to open `http://localhost:3000` it still shows the “Welcome aboard” page. Let’s make it redirect to the attendees page.
 
 Open config/routes.rb and after the first line add
 
-    root :to => redirect('/ideas')
+    root :to => redirect('/attendees')
 
 Test the change by opening the root path (that is, http://localhost:3000/) in your browser.
 
