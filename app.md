@@ -5,17 +5,19 @@ layout: default
 
 # Get to know the tools
 
+Every developer has a bunch of tools to build something awesome! Get to know them to be most efficient!
+
 <i class="icon-file-text icon-2x"> Text Editor</i>
 
-<p class="lead">Sublime Text, Komodo Edit, Vim, Emacs, and Gedit are examples of text editors your can use for writing code and editing files.</p>
+Sublime Text, Komodo Edit, Vim, Emacs, and Gedit are examples of text editors your can use for writing code and editing files.
 
 <i class="icon-terminal icon-2x"> Terminal (known as Command Prompt on Windows)</i>
 
-<p class="lead">Where you start the rails server and run commands.</p>
+Where you start the rails server and run commands.
 
 <i class="icon-desktop icon-2x"> Web browser</i>
 
-<p class="lead">(Firefox, Safari, Chrome) for viewing your application.</p>
+Firefox, Safari, Chrome for viewing your application.
 
 ## Important
 
