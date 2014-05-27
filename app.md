@@ -62,7 +62,7 @@ If you run `ls` inside of the directory you should see folders such as `app` and
 
     rails server
 
-Open `http://localhost:3000` in your browser. You should see “Welcome aboard” page, which means that the generation of your new app worked correctly.
+Open [`http://localhost:3000`](http://localhost:3000) in your browser. You should see “Welcome aboard” page, which means that the generation of your new app worked correctly.
 
 Notice in this window the command prompt is not visible because you are now in the Rails server, the command prompt looks like this:
 
