@@ -42,7 +42,15 @@ You can verify that a directory named projects was created by running the list c
 
     cd projects
 
-You can verify you are now in an empty directory or folder by again running the `ls` command. Now you want to create a new app called railsgirls by running:
+You can verify you are now in an empty directory or folder by again running the `ls` command.
+ 
+This is a good time to check your rails version, on the command line type:
+ 
+    rails --version
+
+Any version greater than 4 is fine (this tutorial is for rails version 4+). 
+ 
+Now you want to create a new app called railsgirls by running:
 
     rails new railsgirls
 
