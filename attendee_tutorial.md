@@ -250,5 +250,16 @@ below
 Now you need to restart the Rails server process in **Terminal/Command Prompt** through `rails server`.
 To show the attendees you've already added, you need to **update their profiles** as it has to geocode their addresses.
 
+# What's next?
 
+- Add design using HTML &amp; CSS
+- Add ratings
+- Use CoffeeScript (or JavaScript) to add interaction
+- Add picture resizing to make loading the pictures faster
+
+## Additional Guides
+Be careful,they have been created for another app, so don't forget to adapt it to this one!
+
+* [Add commenting by Janika Liiv](http://guides.railsgirls.com/commenting/)
+* [Put your app online with Heroku by Terence Lee](http://guides.railsgirls.com/heroku/)
 
