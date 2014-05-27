@@ -23,7 +23,7 @@ We are using Rails' scaffolds to generate a starting point that allows us to lis
     rake db:migrate
     rails s
     
-Open `http://localhost:3000/attendees` in your browser. Click around and test what you got by running these few command-line commands.
+Open [`http://localhost:3000/attendees`](http://localhost:3000/attendees) in your browser. Click around and test what you got by running these few command-line commands.
 
 Hit **`CTRL-C`** to quit the server again when you’ve clicked around a little.
 
@@ -56,17 +56,15 @@ with
 
 Let’s also add a navigation bar and footer to the layout. In the same file, under `<body>` add
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">The workshop app</a>
-          <ul class="nav">
-            <li class="active"><a href="/attendees">Attendees</a></li>
-          </ul>
-        </div>
+    <div class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <a class="navbar-brand" href="/">The workshop app</a>
+        <ul class="nav navbar-nav">
+          <li><a href="/attendees">Attendees</a></li>
+        </ul>
       </div>
     </div>
-
+    
 and before `</body>` add
 
     <footer>
@@ -79,8 +77,6 @@ Now let’s also change the styling. Open `app/assets/stylesheets/application.cs
 
     body { padding-top: 100px; }
     footer { margin-top: 100px; }
-    table, td, th { vertical-align: middle !important; border: none !important; }
-    th { border-bottom: 1px solid #DDD !important; }
     #map { width: 800px; height: 400px; margin: 30px; }
 
 Now make sure you saved your files and refresh the browser to see what was changed. You can also change the HTML & CSS further.
@@ -153,7 +149,7 @@ Open config/routes.rb and after the first line add
 
     root :to => redirect('/attendees')
 
-Test the change by opening the root path (that is, http://localhost:3000/) in your browser.
+Test the change by opening the root path (that is, [`http://localhost:3000/`](http://localhost:3000/)) in your browser.
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about routes, 
 and include details on the order of routes and their relation to static files.</span>
@@ -183,7 +179,7 @@ and then:
 Open **app/models/attendee.rb** and add
 
     geocoded_by :address
-    after_validation :geocode</pre>
+    after_validation :geocode
 
 after
 
@@ -201,7 +197,7 @@ above
 
 The Google Maps javascript needs another javascript called underscore.js to work. Our next task is to download it and integrate it into our app.
 
-Open [http://underscorejs.org](http://underscorejs.org) in your Browser, scroll down to Downloads and save the Development Version as **app/assets/javascripts/underscore.js**.
+Open [http://underscorejs.org](http://underscorejs.org) in your Browser, scroll down to Downloads and save the Development Version as **vendor/assets/javascripts/underscore.js** (right click - save as).
 
 Add to **app/assets/javascripts/application.js**
 
@@ -214,7 +210,7 @@ above
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a bit about the Javascript libraries that we just included and what they can be used for.</span>
 
-We have to tell the map on which coordinates a marker should be displayed. We load that data in our AttendeesController and store it in an instance variable @markers, that we can access in the view.
+We have to tell the map on which coordinates a marker should be displayed. We load that data in our AttendeesController and store it in an instance variable `@markers`, that we can access in the view.
 
 Open **app/controllers/attendees_controller.rb** and add
 
@@ -233,9 +229,13 @@ Add in **app/views/attendees/index.html.erb**
       function initialize_map() {
         handler = Gmaps.build('Google');
         handler.buildMap({ provider: {}, internal: {id: 'map'}}, function() {
-          markers = handler.addMarkers(<%= raw @markers.to_json %>);
+          raw_markers = <%= raw @markers.to_json %>;
+          markers = handler.addMarkers(raw_markers);
           handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
+          handler.getMap().setZoom(4);
+          my_center = _.find(raw_markers, function(marker){
+            return (marker.lat != null) && (marker.lng != null);});
+          handler.getMap().setCenter(my_center);
         });
       }
       google.maps.event.addDomListener(window, "load", initialize_map);
@@ -247,8 +247,15 @@ below
 
     <h1>Listing attendees</h1>
 
-Now you need to restart the Rails server process in **Terminal/Command Prompt** through `rails server`.
+Now you need to restart the Rails server process in **Terminal/Command Prompt** by suing **CTRL + C** to sut it down and starting it again through `rails server`.
 To show the attendees you've already added, you need to **update their profiles** as it has to geocode their addresses.
+
+You might notice that the map sometimes doesn't show up if you don't reload the page. That is because of turbolinks. There are other solutions but the easiest is to just disable turbolinks:
+
+1. Remove `gem "turbolinks"` from your Gemfile and run bundle
+2. Remove `"//= require turbolinks"` from **app/assets/javascripts/application.js**.
+3. Remove any `data-turbolinks-track` attributes in your **app/views/layouts/application.html.erb**.
+
 
 # What's next?
 
