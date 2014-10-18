@@ -137,6 +137,14 @@ to
 
     <%= image_tag(@attendee.picture_url, :width => 600) if @attendee.picture.present? %>
 
+Open `app/views/attendees/index.html.erb` and change
+
+    <td><%= attendee.picture %></td>
+
+to
+
+    <td><%= image_tag(attendee.picture_url, :width => 100) if attendee.picture.present? %></td>
+
 Now refresh your browser to see what changed.
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about HTML.</span>
