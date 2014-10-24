@@ -12,8 +12,22 @@
 // ----------------------------------------------------------------------------
 // Settings
 
-$max-width: 700px
+$dark-grey       : #333333
+$medium-grey     : #696969
+$light-grey      : #f3f3f3
+$red             : #d3360b
+$white           : #ffffff
 
+$text-color      : $dark-grey
+$link-color      : $red
+$background-color: #ffffff
+
+$mobile          : 320px
+$mobile-landscape: 480px
+$mini-tablet     : 600px
+$max-width       : 700px
+
+$baseline        : 24px
 
 // ----------------------------------------------------------------------------
 // Fonts
@@ -50,6 +64,214 @@ $max-width: 700px
 
 // ----------------------------------------------------------------------------
 
+html
+  background: $background-color
+
 body
   +serif
+  font-size: 16px
+  line-height: $baseline
+  color: $text-color
 
+  +media($mobile-landscape)
+    font-size: 18px
+
+a
+  color: $link-color
+  position: relative
+  text-decoration: none
+
+  &:after
+    content: ""
+    display: block
+    height: 3px
+    width: 100%
+    position: absolute
+    bottom: -1px
+    left: 0
+    background: transparentize($link-color, 0.8)
+
+  &:hover
+    &:after
+      bottom: -3px
+
+code
+  padding: 0 5px
+  color: $medium-grey
+
+pre code
+  color: $text-color
+  background: $light-grey
+  padding: 20px
+  overflow: auto
+  display: block
+
+.container
+  padding: 0 25px
+
+  +media($mini-tablet)
+    padding: 0 50px
+
+  +media($max-width + 100px)
+    width: $max-width
+    padding: 0
+    margin: 0 auto
+
+header
+  text-align: center
+  padding: 48px 0 32px
+
+  h1
+    +sans-serif(bold)
+    text-transform: uppercase
+    font-size: 28px
+    line-height: $baseline
+
+    a
+      color: $red
+
+      &:after
+        display: none
+
+    img
+      width: 70px
+      height: 70px
+      display: block
+      margin: 0 auto 20px
+      background: $red
+      border-radius: 35px
+
+  +media($mobile-landscape)
+    border-bottom: 1px solid $light-grey
+
+aside
+  nav
+    background: transparentize($link-color, 0.8)
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+    li
+      &:last-child a
+        border: none
+
+    a
+      +sans-serif
+      display: block
+      padding: $baseline / 2 20px
+      border-bottom: 1px solid $white
+
+      &:after
+        display: none
+
+      &:hover
+        background: $link-color
+        color: $white
+
+  +media($mini-tablet)
+    padding-bottom: $baseline
+
+    nav
+      background: none
+      text-align: center
+
+      li
+        display: inline-block
+        position: relative
+
+        &:last-child:after
+          display: none
+
+        &:after
+          content: "•"
+          display: block
+          position: absolute
+          right: -0.5ex
+          top: $baseline / 2
+          color: transparentize($link-color, 0.8)
+          height: 100%
+
+      a
+        &:hover
+          background: none
+          color: $link-color
+
+          &:after
+            display: block
+
+
+article
+  h1, h2, h3, h4, h5, h6
+    +sans-serif(bold)
+    font-size: 24px
+    line-height: $baseline * 1.25
+    margin: $baseline * 2 0 $baseline 0
+
+  h2, h3
+    font-size: 22px
+
+  h4, h5, h6
+    font-size: 18px
+    line-height: $baseline
+    +sans-serif(normal)
+
+  p, ul, ol, dl
+    margin: 0.75em 0
+
+  ul, ol
+    padding-left: 20px
+
+    +media($mobile-landscape)
+      margin-left: -20px
+
+  hr
+    border: 0
+    height: 1px
+    background: $light-grey
+    margin: $baseline 0
+
+  .coach
+    +sans-serif(light)
+    font-size: 14px
+    line-height: $baseline * 0.8
+    padding-left: 8px
+    display: block
+    border-left: 1px solid $light-grey
+    border: 1px solid transparentize($link-color, 0.8)
+    padding: 0.8em 20px
+    position: relative
+    background: url('../images/icons/explore.svg') no-repeat 100% 0
+    background-size: 6em
+    margin: $baseline * 1.5 0
+
+    i
+      font-style: normal
+      text-transform: uppercase
+
+
+  +media($mobile-landscape)
+    line-height: $baseline * 1.25
+
+    h1, h2, h3, h4, h5, h6
+      font-size: 28px
+      line-height: $baseline * 1.5
+
+    h2, h3
+      font-size: 24px
+
+    h4, h5, h6
+      font-size: 22px
+      line-height: $baseline * 1.25
+
+    .coach
+      font-size: 16px
+      line-height: $baseline
+
+footer
+  text-align: center
+  font-size: 0.8em
+  border-top: 1px solid $light-grey
+  margin: 5em 0 3em
+  padding: 1.5em 0

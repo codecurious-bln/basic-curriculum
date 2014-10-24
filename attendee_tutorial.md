@@ -3,35 +3,35 @@ title: Rails Girls Berlin
 layout: default
 ---
 
-# Attendee Tutorial
+## Attendee Tutorial
 
 {% include attendee_app_description.md %}
 
 
 {% include common_start.md %}
 
-# 2. Create Attendee scaffold
+## 2. Create Attendee scaffold
 
 We are using Rails' scaffolds to generate a starting point that allows us to list, add, remove, edit, and view things; in our case attendees.
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Coach: What is a scaffold (1. the command, 2. the model name and related db table; pluralization/naming conventions, 3. attributes and types)?</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: What is a scaffold (1. the command, 2. the model name and related db table; pluralization/naming conventions, 3. attributes and types)?</span>
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: What are migrations and when do you need to do them, why?</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: What are migrations and when do you need to do them, why?</span>
 
- 
+
     rails generate scaffold attendee name:string twitter_handle:string bio:text address:text picture:string
     rake db:migrate
     rails s
-    
+
 Open [`http://localhost:3000/attendees`](http://localhost:3000/attendees) in your browser. Click around and test what you got by running these few command-line commands.
 
 Hit **`CTRL-C`** to quit the server again when you’ve clicked around a little.
 
 
-# 3. Design
+## 3. Design
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about the relationship between HTML and Rails.
-What part of views is HTML and what is Embedded Ruby (ERB)? What is MVC and how does this relate to it? 
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk about the relationship between HTML and Rails.
+What part of views is HTML and what is Embedded Ruby (ERB)? What is MVC and how does this relate to it?
 (Models and controllers are responsible for generating the HTML views.)</span>
 
 The app doesn't look very nice yet. Let’s do something about that. We’ll use the Twitter Bootstrap project to give us nicer styling really easily.
@@ -64,7 +64,7 @@ Let’s also add a navigation bar and footer to the layout. In the same file, un
         </ul>
       </div>
     </div>
-    
+
 and before `</body>` add
 
     <footer>
@@ -81,9 +81,9 @@ Now let’s also change the styling. Open `app/assets/stylesheets/application.cs
 
 Now make sure you saved your files and refresh the browser to see what was changed. You can also change the HTML & CSS further.
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about CSS and layouts.</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk a little about CSS and layouts.</span>
 
-# 4. Adding picture uploads
+## 4. Adding picture uploads
 
 We need to install a piece of software to let us upload files in Rails.
 
@@ -95,7 +95,7 @@ add
 
     gem 'carrierwave'
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Explain what libraries are and why they are useful. Describe what open source software is.</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Explain what libraries are and why they are useful. Describe what open source software is.</span>
 
 In the terminal run:
 
@@ -147,9 +147,9 @@ to
 
 Now refresh your browser to see what changed.
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a little about HTML.</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk a little about HTML.</span>
 
-# 5. Finetune the routes
+## 5. Finetune the routes
 
 If you try to open `http://localhost:3000` it still shows the “Welcome aboard” page. Let’s make it redirect to the attendees page.
 
@@ -159,10 +159,10 @@ Open config/routes.rb and after the first line add
 
 Test the change by opening the root path (that is, [`http://localhost:3000/`](http://localhost:3000/)) in your browser.
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about routes, 
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk about routes,
 and include details on the order of routes and their relation to static files.</span>
 
-# 6: Add Geolocator and Google Maps
+## 6: Add Geolocator and Google Maps
 To mark your location on the map, we need to add two gems: one to calculate your position, one to display it on the map.
 Let's start with implementing the geolocation to the attendee profile.
 
@@ -170,7 +170,7 @@ Open **Gemfile** in the project and add
 
     gem 'geocoder'
     gem 'gmaps4rails'
-    
+
 under the line
 
     gem 'carrierwave'
@@ -183,7 +183,7 @@ and then:
 
     rails generate migration AddLatitudeAndLongitudeToAttendee latitude:float longitude:float
     rake db:migrate
-    
+
 Open **app/models/attendee.rb** and add
 
     geocoded_by :address
@@ -216,7 +216,7 @@ above
 
     //require_tree .
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk a bit about the Javascript libraries that we just included and what they can be used for.</span>
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk a bit about the Javascript libraries that we just included and what they can be used for.</span>
 
 We have to tell the map on which coordinates a marker should be displayed. We load that data in our AttendeesController and store it in an instance variable `@markers`, that we can access in the view.
 
@@ -248,7 +248,7 @@ Add in **app/views/attendees/index.html.erb**
       }
       google.maps.event.addDomListener(window, "load", initialize_map);
     </script>
-    
+
     <div id="map"></div>
 
 below
@@ -264,8 +264,9 @@ You might notice that the map sometimes doesn't show up if you don't reload the 
 2. Remove `"//= require turbolinks"` from **app/assets/javascripts/application.js**.
 3. Remove any `data-turbolinks-track` attributes in your **app/views/layouts/application.html.erb**.
 
+***
 
-# What's next?
+## What's next?
 
 - Add design using HTML &amp; CSS
 - Add ratings
