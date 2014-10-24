@@ -209,16 +209,13 @@ article
     line-height: $baseline * 1.25
     margin: $baseline * 2 0 $baseline 0
 
-  h2, h3
-    font-size: 22px
-
   h4, h5, h6
     font-size: 18px
     line-height: $baseline
     +sans-serif(normal)
 
   p, ul, ol, dl
-    margin: 0.75em 0
+    margin: $baseline / 2 0
 
   ul, ol
     padding-left: 20px
@@ -240,10 +237,10 @@ article
     display: block
     border-left: 1px solid $light-grey
     border: 1px solid transparentize($link-color, 0.8)
-    padding: 0.8em 20px
+    padding: $baseline * 0.5 40px $baseline * 0.5 20px
     position: relative
-    background: url('../images/icons/explore.svg') no-repeat 100% 0
-    background-size: 6em
+    background: url('../images/icons/explore.svg') no-repeat calc(100% - 10px) $baseline * 0.6
+    background-size: 20px
     margin: $baseline * 1.5 0
 
     i
@@ -259,7 +256,7 @@ article
       line-height: $baseline * 1.5
 
     h2, h3
-      font-size: 24px
+      margin: $baseline * 3 0 $baseline * 1.5 0
 
     h4, h5, h6
       font-size: 22px
@@ -271,7 +268,7 @@ article
 
 footer
   text-align: center
-  font-size: 0.8em
+  font-size: 14px
   border-top: 1px solid $light-grey
-  margin: 5em 0 3em
-  padding: 1.5em 0
+  margin: $baseline * 4 0 $baseline * 2
+  padding: $baseline 0
