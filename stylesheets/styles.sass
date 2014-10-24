@@ -3,5 +3,36 @@
 # only Main files contain this front matter, not partials.
 ---
 
+// ----------------------------------------------------------------------------
+// Colors
+
+
+// ----------------------------------------------------------------------------
+// Fonts
+
+=serif($weight: normal, $italic: false)
+  font-family: 'Merriweather', serif
+  @if $weight == bold
+    font-weight: 700
+  @else
+    font-weight: 400
+  @if $italic == true
+    font-style: italic
+
+=sans-serif($weight: normal, $italic: false)
+  font-family: 'Open Sans', serif
+  @if $weight == light
+    font-weight: 300
+  @else if $weight == bold
+    font-weight: 800
+  @else
+    font-weight: 400
+
+=mono
+  font-family: 'Ubuntu Mono'
+
+
+// ----------------------------------------------------------------------------
+
 body
-  background: #fcfcfc
+  +serif
