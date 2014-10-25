@@ -168,6 +168,8 @@ You can also print the first one:
     planets.first
 is the same as
     planets[0]
+As you might have guessed, you can get the last one with:
+    planets.last
 
 ### Why is the first element ``[0]``?
 You should know that an array starts counting with 0.  
