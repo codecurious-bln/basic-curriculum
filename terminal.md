@@ -167,8 +167,8 @@ Look at the size of it:
 You can also print the first one:
     planets.first
 is the same as
-    planets.[0]
-You should know that an array starts counting with 0. So the last one would be `planets.[3]`
+    planets[0]
+You should know that an array starts counting with 0. So the last one would be `planets[2]`
 
 ##Iteration
 Iteration means looping through an array and doing something with each item. Looping means you repeat the same action over and over until an halt. In our example we will perform the same action on the first item in the array to the last one. The placeholder for those items is stored in the pipes | |.
