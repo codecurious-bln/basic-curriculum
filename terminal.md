@@ -148,12 +148,15 @@ Capitalize the planet:
 An array is way how one can store a list or a collection in a certain format. Let's create a list of planets stored in an array. You can imagine it like a bookshelf.
 
 Creating an empty array:
+
     planets = []
 
 Now we add our variable to that array
+
     planets.push planet
 
 Let's add some more planets directly (hit enter after each line)
+
     planets.push "earth"
     planets.push "saturn"
     planets.push "jupiter"
@@ -174,19 +177,21 @@ You should know that an array starts counting with 0. So the last one would be `
 Iteration means looping through an array and doing something with each item. Looping means you repeat the same action over and over until an halt. In our example we will perform the same action on the first item in the array to the last one. The placeholder for those items is stored in the pipes | |.
 
 Now we are just saying `puts` to each of the items:
-    planets.each do 
-      |x| puts + x 
+
+    planets.each do |x|
+      puts x
     end
 
 Now we add `upcase` :
-    planets.each do 
-      |x| puts + x.upcase 
+
+    planets.each do |x|
+      puts x.upcase
     end
 
 Now we add an `"Hello "` to it:
 
-    planets.each do 
-      |x| puts "Hello " + x 
+    planets.each do |x|
+      puts "Hello " + x
     end
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: If students get stuck probably best to exit irb and start over again.</span>
