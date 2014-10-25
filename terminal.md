@@ -175,18 +175,18 @@ Iteration means looping through an array and doing something with each item. Loo
 
 Now we are just saying `puts` to each of the items:
     planets.each do 
-      |x| puts + x 
+      |x| puts x 
     end
 
 Now we add `upcase` :
     planets.each do 
-      |x| puts + x.upcase 
+      |x| puts x.upcase 
     end
 
 Now we add an `"Hello "` to it:
 
     planets.each do 
-      |x| puts "Hello " + x 
+      |x| puts "Hello " + x.upcase
     end
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: If students get stuck probably best to exit irb and start over again.</span>
