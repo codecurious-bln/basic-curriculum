@@ -148,12 +148,15 @@ Capitalize the planet:
 An array is way how one can store a list or a collection in a certain format. Let's create a list of planets stored in an array. You can imagine it like a bookshelf.
 
 Creating an empty array:
+
     planets = []
 
 Now we add our variable to that array
+
     planets.push planet
 
 Let's add some more planets directly (hit enter after each line)
+
     planets.push "earth"
     planets.push "saturn"
     planets.push "jupiter"
@@ -165,10 +168,15 @@ Look at the size of it:
     planets.size
 
 You can also print the first one:
+
     planets.first
+
 is the same as
+
     planets[0]
+
 As you might have guessed, you can get the last one with:
+
     planets.last
 
 ### Why is the first element ``[0]``?
