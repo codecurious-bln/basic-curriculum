@@ -207,6 +207,7 @@ Now we add an `"Hello "` to it:
 As you noticed, anytime you quit `irb` and go back in again, nothing was saved and you have to start all over again. In the long run you will want to save code in files.
 
 So let's create a file for saving ruby code:
+
     touch blabla.rb
 
 
@@ -219,8 +220,8 @@ Save this text there:
     print a
 
 You can now run this file in the terminal:
-    ruby blabla.txt
 
+    ruby blabla.rb
 
 If you enjoyed running .rb files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal) [Chris Pine LearnToProgram](http://pine.fm/LearnToProgram/?Chapter=01) tutorial, you can skip any parts that are not that interesting to you, e.g. line-widths in a poem or how old you are in seconds.
 
