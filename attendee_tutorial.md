@@ -210,26 +210,28 @@ Add in **app/views/attendees/index.html.erb**
     <script type="text/javascript">
       function initialize() {
         var attendees    = <%= raw @attendees.to_json %>;
-        var map          = new google.maps.Map(document.getElementById('map'), {});
+        var map          = new google.maps.Map(document.getElementById('map'), {
+          zoom  : 4,
+          center: new google.maps.LatLng(52.519242, 13.404169) // Berlin
+        });
         var markerBounds = new google.maps.LatLngBounds();
 
         for (var i = 0, l = attendees.length; i < l; i++) {
           var position = new google.maps.LatLng(attendees[i].latitude, attendees[i].longitude);
+
           new google.maps.Marker({
             position: position,
             map     : map,
             title   : attendees[i].name
           });
+
           markerBounds.extend(position);
         }
 
-        map.setCenter(markerBounds.getCenter());
-        if (attendees.length <= 1) {
-          map.setZoom(4);
-        } else {
-          map.fitBounds(markerBounds);
-        }
+        if (attendees.length > 0) map.setCenter(markerBounds.getCenter());
+        if (attendees.length > 1) map.fitBounds(markerBounds);
       }
+
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
