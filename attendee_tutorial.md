@@ -77,7 +77,7 @@ Now let’s also change the styling. Open `app/assets/stylesheets/application.cs
 
     body { padding-top: 100px; }
     footer { margin-top: 100px; }
-    #map { width: 800px; height: 400px; margin: 30px; }
+    #map { width: 800px; height: 400px; margin: 30px 0; }
 
 Now make sure you saved your files and refresh the browser to see what was changed. You can also change the HTML & CSS further.
 
@@ -218,13 +218,11 @@ Add in **app/views/attendees/index.html.erb**
 
         for (var i = 0, l = attendees.length; i < l; i++) {
           var position = new google.maps.LatLng(attendees[i].latitude, attendees[i].longitude);
-
           new google.maps.Marker({
             position: position,
             map     : map,
             title   : attendees[i].name
           });
-
           markerBounds.extend(position);
         }
 
