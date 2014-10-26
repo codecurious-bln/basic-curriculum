@@ -163,13 +163,12 @@ Test the change by opening the root path (that is, [`http://localhost:3000/`](ht
 and include details on the order of routes and their relation to static files.</span>
 
 ## 6: Add Geolocator and Google Maps
-To mark your location on the map, we need to add two gems: one to calculate your position, one to display it on the map.
-Let's start with implementing the geolocation to the attendee profile.
+To indicate a location on the map, we need to add another gem which will convert a human readable address into location information as used by the map itself, defined in latitude and longitude values.
+Let's start by adding some code to the attendee profile which will will handle this conversion automatically for us.
 
 Open **Gemfile** in the project and add
 
     gem 'geocoder'
-    gem 'gmaps4rails'
 
 under the line
 
@@ -193,69 +192,54 @@ after
 
     mount_uploader :picture, PictureUploader
 
-We are going to include the Google Maps javascript API to display a map.
+We are going to include the Google Maps JavaScript API to display a map.
 Open **app/views/layouts/application.html.erb** and add
 
-    <%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry" %>
-    <%= javascript_include_tag "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 above
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-The Google Maps javascript needs another javascript called underscore.js to work. Our next task is to download it and integrate it into our app.
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk a bit about the Google Maps library as well as JavaScript in general and what they can be used for.</span>
 
-Open [http://underscorejs.org](http://underscorejs.org) in your Browser, scroll down to Downloads and save the Development Version as **vendor/assets/javascripts/underscore.js** (right click - save as).
-
-Add to **app/assets/javascripts/application.js**
-
-    //= require underscore
-    //= require gmaps/google
-
-above
-
-    //require_tree .
-
-<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Talk a bit about the Javascript libraries that we just included and what they can be used for.</span>
-
-We have to tell the map on which coordinates a marker should be displayed. We load that data in our AttendeesController and store it in an instance variable `@markers`, that we can access in the view.
-
-Open **app/controllers/attendees_controller.rb** and add
-
-    @markers = Gmaps4rails.build_markers(@attendees) do |attendee, marker|
-      marker.lat attendee.latitude
-      marker.lng attendee.longitude
-    end
-
-to the index action below
-
-    @attendees = Attendee.all
+All we have to do now is to pass our list of attendees on to the Google Maps API so we can display a little red marker for each attendee on the map. Google Maps will herefor use the latitude and longitude information which has been calculated for us by the `geocoder` gem one step prior.
 
 Add in **app/views/attendees/index.html.erb**
 
     <script type="text/javascript">
-      function initialize_map() {
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function() {
-          raw_markers = <%= raw @markers.to_json %>;
-          markers = handler.addMarkers(raw_markers);
-          handler.bounds.extendWith(markers);
-          handler.getMap().setZoom(4);
-          my_center = _.find(raw_markers, function(marker){
-            return (marker.lat != null) && (marker.lng != null);});
-          handler.getMap().setCenter(my_center);
-        });
-      }
-      google.maps.event.addDomListener(window, "load", initialize_map);
-    </script>
+      function initialize() {
+        var attendees    = <%= raw @attendees.to_json %>;
+        var map          = new google.maps.Map(document.getElementById('map'), {});
+        var markerBounds = new google.maps.LatLngBounds();
 
-    <div id="map"></div>
+        for (var i = 0, l = attendees.length; i < l; i++) {
+          var position = new google.maps.LatLng(attendees[i].latitude, attendees[i].longitude);
+          new google.maps.Marker({
+            position: position,
+            map     : map,
+            title   : attendees[i].name
+          });
+          markerBounds.extend(position);
+        }
+
+        map.setCenter(markerBounds.getCenter());
+        if (attendees.length <= 1) {
+          map.setZoom(4);
+        } else {
+          map.fitBounds(markerBounds);
+        }
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 below
 
     <h1>Listing attendees</h1>
 
-Now you need to restart the Rails server process in **Terminal/Command Prompt** by suing **CTRL + C** to sut it down and starting it again through `rails server`.
+<span class="lead coach"><i class="icon-comment-alt">Coach</i>: Walk briefly through the JavaScript snippet and explain a bit what’s goin on.</span>
+
+Now you need to restart the Rails server process in **Terminal/Command Prompt** by suing **CTRL + C** to shut it down and starting it again through `rails server`.
 To show the attendees you've already added, you need to **update their profiles** as it has to geocode their addresses.
 
 You might notice that the map sometimes doesn't show up if you don't reload the page. That is because of turbolinks. There are other solutions but the easiest is to just disable turbolinks:
