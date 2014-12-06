@@ -237,6 +237,13 @@ below
 
     <h1>Listing attendees</h1>
 
+And below
+    </table>
+
+Add
+
+    <div id="map"></div>
+
 <span class="lead coach"><i class="icon-comment-alt">Coach</i>: Walk briefly through the JavaScript snippet and explain a bit what’s goin on.</span>
 
 Now you need to restart the Rails server process in **Terminal/Command Prompt** by suing **CTRL + C** to shut it down and starting it again through `rails server`.
