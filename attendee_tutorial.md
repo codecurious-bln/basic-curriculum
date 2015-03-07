@@ -69,7 +69,7 @@ and before `</body>` add
 
     <footer>
       <div class="container">
-        Rails Girls 2014
+        Rails Girls 2015
       </div>
     </footer>
 
