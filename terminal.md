@@ -73,7 +73,7 @@ You can look at the content of your text file using cat in the terminal:
 
     cat hello.txt
 
-Ok, this should be enough about files and the terminal right now. Later we get back to this, when we save code in files.    
+Ok, this should be enough about files and the terminal right now. Later we get back to this, when we save code in files.
 
 
 The terminal is not only a means to talk to your computer, it can also run many programs.
@@ -91,7 +91,7 @@ Ther ruby terminal is an environment that understands and executes ruby code. Yo
 You can quite `irb` anytime by typing `exit`.
 
 ## Strings and Integers
-    
+
 For example you could write this and hit Enter:
 
     "Hello World"
@@ -180,18 +180,20 @@ As you might have guessed, you can get the last one with:
     planets.last
 
 ### Why is the first element ``[0]``?
-You should know that an array starts counting with 0.  
+You should know that an array starts counting with 0.
 So for the array ``planets = ["earth", "saturn", "jupiter"]``, the last one would be `planets[2]`.
 
 ##Iteration
 Iteration means looping through an array and doing something with each item. Looping means you repeat the same action over and over until an halt. In our example we will perform the same action on the first item in the array to the last one. The placeholder for those items is stored in the pipes | |.
 
 Now we are just saying `puts` to each of the items:
+
     planets.each do |x|
       puts x
     end
 
 Now we add `upcase` :
+
     planets.each do |x|
       puts x.upcase
     end
@@ -208,6 +210,7 @@ Now we add an `"Hello "` to it:
 As you noticed, anytime you quit `irb` and go back in again, nothing was saved and you have to start all over again. In the long run you will want to save code in files.
 
 So let's create a file for saving ruby code:
+
     touch blabla.rb
 
 
@@ -220,6 +223,7 @@ Save this text there:
     print a
 
 You can now run this file in the terminal:
+
     ruby blabla.rb
 
 
