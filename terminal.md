@@ -95,11 +95,13 @@ You can quite `irb` anytime by typing `exit`.
 For example you could write this and hit Enter:
 
     "Hello World"
+
 Any word literals that are not numbers or code need to be written in quotation marks ("" or '') so ruby terminal knows what it is.
 
 And as we know Ruby knows math too:
 
     1 + 5
+
 Ruby knows integers, no need to mark them specifically.
 
 ## Variables
@@ -108,11 +110,12 @@ Let's store something in a variable:
 
     planet = "earth"
 
-Variable names are always written in lower caps. .
+Variable names are always written in lower caps.
 
 Let's output the variable
 
     planet
+
 As you can see the ruby terminal gives you feedback on what you typed. We can also call it the return value.
 
 You can also output any string:
