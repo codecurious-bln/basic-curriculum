@@ -46,9 +46,9 @@ To get one level up again run
 
 A short-cut to your home directory is the tilde: `~`
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: You can talk about auot-completion with the tab command</span>
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: You can talk about auto-completion with the tab command</span>
 
-Now navigate to the place in your folders where you want to store all Rails Girls tutorial materials and exercises. To create a directory named "railsgirls" for example run:
+Now navigate to the place in your folders where you want to store all Rails Girls tutorial materials and exercises. To create a directory, named "railsgirls" for example, run:
 
     mkdir railsgirls
 
@@ -64,7 +64,7 @@ Let's type ls to see if it is there:
 
     ls
 
-Let's open that file in your editor. Open your editor and in the menubar use File>>Open to open the file.
+Let's now open that file in your editor. Open your editor and in the menubar use File>>Open to open the file.
 Save this text there:
 
     "This is some example text in my text file"
@@ -73,7 +73,7 @@ You can look at the content of your text file using cat in the terminal:
 
     cat hello.txt
 
-Ok, this should be enough about files and the terminal right now. Later we get back to this, when we save code in files.
+Ok, this should be enough about files and the terminal for now. We'll later get back to this, to save code in files.
 
 
 The terminal is not only a means to talk to your computer, it can also run many programs.
