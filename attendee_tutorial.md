@@ -3,6 +3,8 @@ title: Rails Girls Berlin
 layout: default
 ---
 
+{% include outdated_warning.md %}
+
 ## Attendee Tutorial
 
 {% include attendee_app_description.md %}
@@ -269,4 +271,3 @@ Be careful,they have been created for another app, so don't forget to adapt it t
 
 * [Add commenting by Janika Liiv](http://guides.railsgirls.com/commenting/)
 * [Put your app online with Heroku by Terence Lee](http://guides.railsgirls.com/heroku/)
-
