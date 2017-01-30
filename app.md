@@ -3,9 +3,10 @@ title: Rails Girls Berlin
 layout: default
 ---
 
+{% include outdated_warning.md %}
+
 # App Tutorial
 
-{% include outdated_warning.md %}
 {% include common_start.md %}
 
 # 2. Create Idea scaffold
