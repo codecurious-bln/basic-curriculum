@@ -3,6 +3,8 @@ title: Rails Girls Berlin
 layout: default
 ---
 
+{% include outdated_warning.md %}
+
 # App Tutorial
 
 {% include common_start.md %}
@@ -24,7 +26,7 @@ Hit `CTRL-C` to quit the server again when you’ve clicked around a little.
 # 3. Design
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about the relationship between HTML and Rails.
-What part of views is HTML and what is Embedded Ruby (ERB)? What is MVC and how does this relate to it? 
+What part of views is HTML and what is Embedded Ruby (ERB)? What is MVC and how does this relate to it?
 (Models and controllers are responsible for generating the HTML views.)</span>
 
 The app doesn’t look very nice yet. Let’s do something about that. We’ll use the Twitter Bootstrap project to give us nicer styling really easily.
@@ -149,7 +151,7 @@ Delete the file `index.html` from the `public/` folder.
 
 Test the change by opening the root path (that is, http://localhost:3000/) in your browser.
 
-<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about routes, 
+<span class="lead coach"><i class="icon-comment-alt"> Coach</i>: Talk about routes,
 and include details on the order of routes and their relation to static files.</span>
 
 # What next?
@@ -158,4 +160,3 @@ and include details on the order of routes and their relation to static files.</
 - Add ratings
 - Use CoffeeScript (or JavaScript) to add interaction
 - Add picture resizing to make loading the pictures faster
-
