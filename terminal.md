@@ -25,18 +25,21 @@ layout: default
 
 We’re going to familiarize ourselves with moving around our folders without using the graphical interface
 
-When you start the terminal the `bash` program starts off automatically and leaves you with the `command prompt`, which looks like this:  `$`.
+When you start the terminal the first thing you will notice is the
+`command prompt`, which looks like this:  `$` (or `>` on Windows).
+The command prompt means that the computer is waiting for your orders.
+Every order (command) has to be confirmed by hitting `ENTER`.
 
 When the command prompt is not visible you cannot execute new commands.
 Let's start with a command that prints your current working directory
 
     pwd
 
-With ls you can get a list of all the content in that directory:
+With `ls` you can get a list of all the content in that directory:
 
     ls
 
-To get into one directory run cd followed by the name of that directory:
+To get into one directory run `cd` followed by the name of that directory:
 
     cd documents
 
@@ -60,7 +63,7 @@ Let's create a text file there:
 
     touch hello.txt
 
-Let's type ls to see if it is there:
+Let's type `ls` to see if it is there:
 
     ls
 
