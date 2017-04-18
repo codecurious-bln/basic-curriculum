@@ -146,7 +146,7 @@ Capitalize the planet:
 
     puts "Hello " + planet.upcase + "!"
 
-##Arrays
+## Arrays
 
 An array is way how one can store a list or a collection in a certain format. Let's create a list of planets stored in an array. You can imagine it like a bookshelf.
 
@@ -182,11 +182,12 @@ As you might have guessed, you can get the last one with:
 
     planets.last
 
-### Why is the first element ``[0]``?
+## Why is the first element ``[0]``?
+
 You should know that an array starts counting with 0.
 So for the array ``planets = ["earth", "saturn", "jupiter"]``, the last one would be `planets[2]`.
 
-##Iteration
+## Iteration
 Iteration means looping through an array and doing something with each item. Looping means you repeat the same action over and over until an halt. In our example we will perform the same action on the first item in the array to the last one. The placeholder for those items is stored in the pipes | |.
 
 Now we are just saying `puts` to each of the items:
@@ -209,7 +210,8 @@ Now we add an `"Hello "` to it:
 
 <span class="lead coach"><i class="icon-comment-alt"> Coach</i>: If students get stuck probably best to exit irb and start over again.</span>
 
-#Saving code in files
+# 3. Saving code in files
+
 As you noticed, anytime you quit `irb` and go back in again, nothing was saved and you have to start all over again. In the long run you will want to save code in files.
 
 So let's create a file for saving ruby code:
