@@ -84,14 +84,14 @@ The terminal is not only a means to talk to your computer, it can also run many 
 # 2. Get to know the irb program
 
 
-Now let's open a ruby terminal
+Now let's open a Ruby terminal
 
     irb
 
-As you notice the command prompt is gone and we have entered another program on our terminal called the ruby terminal.
-Ther ruby terminal is an environment that understands and executes ruby code. You can try out all commands you did during this tutorial: `http://tryruby.org` which is a browser based ruby environment.
+As you notice the command prompt is gone and we have entered another program on our terminal called the Ruby terminal.
+The Ruby terminal is an environment that understands and executes Ruby code. You can try out all commands you did during this tutorial: `http://tryruby.org` which is a browser based Ruby environment.
 
-You can quite `irb` anytime by typing `exit`.
+You can quit `irb` anytime by typing `exit`.
 
 ## Strings and Integers
 
@@ -99,7 +99,7 @@ For example you could write this and hit Enter:
 
     "Hello World"
 
-Any word literals that are not numbers or code need to be written in quotation marks ("" or '') so ruby terminal knows what it is.
+Any word literals that are not numbers or code need to be written in quotation marks (`""` or `''`) so Ruby terminal knows what it is.
 
 And as we know Ruby knows math too:
 
@@ -119,7 +119,7 @@ Let's output the variable
 
     planet
 
-As you can see the ruby terminal gives you feedback on what you typed. We can also call it the return value.
+As you can see the Ruby terminal gives you feedback on what you typed. We can also call it the return value.
 
 You can also output any string:
 
@@ -217,7 +217,11 @@ Now we add an `"Hello "` to it:
 
 As you noticed, anytime you quit `irb` and go back in again, nothing was saved and you have to start all over again. In the long run you will want to save code in files.
 
-So let's create a file for saving ruby code:
+So let's create a file for saving Ruby code. First quit `irb`:
+
+    exit
+
+and now you can give commands to your operating system:
 
     touch blabla.rb
 
@@ -235,4 +239,4 @@ You can now run this file in the terminal:
     ruby blabla.rb
 
 
-If you enjoyed running .rb files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal) [Chris Pine LearnToProgram](http://pine.fm/LearnToProgram/?Chapter=01) tutorial, you can skip any parts that are not that interesting to you, e.g. line-widths in a poem or how old you are in seconds.
+If you enjoyed running `.rb` files in the terminal, here are some more commands you can try out (save the text in the files and run it in the terminal) [Chris Pine LearnToProgram](http://pine.fm/LearnToProgram/?Chapter=01) tutorial, you can skip any parts that are not that interesting to you, e.g. line-widths in a poem or how old you are in seconds.
